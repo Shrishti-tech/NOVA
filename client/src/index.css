@@ -1,0 +1,68 @@
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  @apply bg-canvas text-gray-900 dark:bg-canvas-dark dark:text-gray-100 transition-colors duration-200;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-700 rounded-full;
+}
+
+@layer components {
+  .card {
+    @apply bg-white dark:bg-surface-dark border border-gray-200/70 dark:border-white/10 rounded-2xl shadow-card dark:shadow-card-dark;
+  }
+
+  .card-hover {
+    @apply hover:shadow-glow hover:-translate-y-0.5 transition-all duration-200;
+  }
+
+  .glass {
+    @apply bg-white/70 dark:bg-white/5 backdrop-blur-xl border border-white/40 dark:border-white/10;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-nova text-white font-medium px-4 py-2.5 text-sm shadow-glow hover:brightness-110 active:brightness-95 transition-all duration-150 disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 text-gray-700 dark:text-gray-200 font-medium px-4 py-2.5 text-sm hover:bg-gray-50 dark:hover:bg-white/10 transition-colors duration-150;
+  }
+
+  .input-field {
+    @apply w-full rounded-xl border border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 px-3.5 py-2.5 text-sm text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-nova-500/50 focus:border-nova-500 transition-all duration-150;
+  }
+
+  .skeleton {
+    @apply relative overflow-hidden bg-gray-200 dark:bg-white/10 rounded-lg;
+  }
+  .skeleton::after {
+    content: '';
+    @apply absolute inset-0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+    background-size: 400px 100%;
+    animation: shimmer 1.8s ease-in-out infinite;
+  }
+  .dark .skeleton::after {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06), transparent);
+    background-size: 400px 100%;
+  }
+}
