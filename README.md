@@ -1,4 +1,5 @@
-# NOVA
+# NOVA — Team Productivity Platform
+Plan. Collaborate. Deliver. 
 
 A team productivity platform — manage projects, assign tasks, track activity, and
 collaborate with your team in one place.
